@@ -31,3 +31,39 @@
 - [MDN Web Docs](https://developer.mozilla.org/ko/)
 - [W3Schools](https://www.w3schools.com/)
 # webp
+chat gpt
+
+# 🌐 웹 프로그래밍 수업 개요
+
+## 1. 웹 개발 기초
+- **HTML**: 웹 페이지의 구조와 콘텐츠를 정의하는 마크업 언어
+- **CSS**: 웹 페이지의 디자인과 레이아웃을 꾸미는 스타일 시트 언어
+- **JavaScript**: 웹 페이지를 동적으로 만들고 사용자와 상호작용하는 스크립트 언어
+
+---
+
+## 2. 프론트엔드 (Frontend) 개발
+- **주요 역할**: 사용자에게 보여지는 웹 페이지의 시각적인 부분(UI)을 개발합니다.
+- **핵심 기술**:
+    - **JavaScript 라이브러리/프레임워크**: React, Vue.js, Angular 등
+    - **CSS 전처리기**: SASS/SCSS
+    - **빌드 도구**: Webpack, Vite
+
+---
+
+## 3. 백엔드 (Backend) 개발
+- **주요 역할**: 서버, 데이터베이스, 애플리케이션 로직 등 사용자에게 보이지 않는 부분을 개발합니다.
+- **핵심 기술**:
+    - **프로그래밍 언어**: Node.js (JavaScript), Python (Django/Flask), Java (Spring) 등
+    - **데이터베이스**:
+        - **SQL**: MySQL, PostgreSQL
+        - **NoSQL**: MongoDB
+    - **API**: RESTful API 설계 및 구현
+
+---
+
+## 4. 웹 배포 및 관리
+- **배포 (Deployment)**: 개발된 웹사이트를 인터넷에 공개하고 사용자가 접속할 수 있도록 서버에 올리는 과정
+- **버전 관리**: Git & GitHub를 사용한 소스 코드 관리 및 협업
+
+- google gemini
