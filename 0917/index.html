@@ -3,103 +3,17 @@
 <head> 
     <meta charset="UTF-8"> 
     <meta name="description" content="자기 소개 페이지 - 사용할 수 있는 언어와 숙련도를 표현"> 
-    <title>My Skills</title> 
-    <style> 
-        body { 
-            font-family: Arial, sans-serif; 
-            margin: 40px; 
-            background: #f7f7f7; 
-        } 
-        .container { 
-            background: #fff; 
-            padding: 30px; 
-            border-radius: 10px; 
-            max-width: 500px; 
-            margin: auto; 
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
-        } 
-        h1 { 
-            color: #333; 
-        } 
-        .skills { 
-            margin-top: 20px; 
-        } 
-        .skill { 
-            margin-bottom: 15px; 
-        } 
-        .skill-name { 
-            font-weight: bold; 
-        } 
-        .bar-bg { 
-            background: #e0e0e0; 
-            border-radius: 5px; 
-            overflow: hidden; 
-            height: 18px; 
-            margin-top: 5px; 
-        } 
-        .bar { 
-            height: 100%; 
-            border-radius: 5px; 
-        } 
-        .html { width: 10%; background: #e44d26; } 
-        .C { width: 10%; background: #264de4; } 
-        .js { width: 10%; background: #f0db4f; } 
-        .python { width: 10%; background: #3572A5; }
-
-        .login-form {
-            margin-top: 30px;
-            border-top: 1px solid #eee;
-            padding-top: 20px;
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-        .form-group input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box; 
-        }
-        .submit-btn {
-            width: 100%;
-            padding: 12px;
-            background-color: #3572A5;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        .submit-btn:hover {
-            background-color: #2a5c8a;
-        }
-
-        /* --- 👇 새로 추가된 fieldset, legend 스타일 --- */
-        fieldset {
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-        legend {
-            font-weight: bold;
-            font-size: 1.1em;
-            color: #333;
-            padding: 0 10px; /* legend 태그가 테두리를 벗어나도록 약간의 여백 추가 */
-        }
-        /* --- 👆 여기까지 --- */
-
-    </style> 
+    <title>My Skills - Dark Mode</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 </head> 
 <body> 
-
     <div class="container"> 
         <h1>My Skills 🧑‍💻</h1> 
         <div class="skills"> 
@@ -131,36 +45,17 @@
 
         <div class="login-form">
             <form action="#" method="post">
-
-                <fieldset>
-                    <legend>회원정보</legend>
-
-                    <div class="form-group">
-                        <label for="email">이메일</label>
-                        <input type="email" id="email" name="user_email" placeholder="you@example.com" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="homepage">홈페이지</label>
-                        <input type="url" id="homepage" name="user_homepage" placeholder="https://example.com">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="phone">전화번호</label>
-                        <input type="tel" id="phone" name="user_phone" placeholder="010-1234-5678">
-                    </div>
-
-                </fieldset>
+                <div class="form-group">
+                    <label for="email">이메일</label>
+                    <input type="email" id="email" name="user_email" placeholder="you@example.com" required>
+                </div>
                 <div class="form-group">
                     <label for="password">비밀번호</label>
                     <input type="password" id="password" name="user_password" placeholder="비밀번호를 입력하세요" required>
                 </div>
-
                 <button type="submit" class="submit-btn">제출</button>
             </form>
         </div>
-
     </div> 
-    
 </body> 
 </html>
