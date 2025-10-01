@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF--8">
+    <title>별 찍기 모음</title>
+    <style>
+        /* pre 태그로 공백과 글자 간격을 일정하게 유지합니다. */
+        pre {
+            font-family: monospace;
+            font-size: 16px;
+            line-height: 1.2;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>1. 왼쪽 정렬된 직각삼각형</h2>
+    <pre><script>
+        for (let i = 1; i <= 4; i++) {
+            for (let j = 1; j <= i; j++) {
+                document.write('*');
+            }
+            document.write('<br>');
+        }
+    </script></pre>
+    <hr>
+
+    <h2>2. 오른쪽 정렬된 직각삼각형</h2>
+    <pre><script>
+        for (let i = 1; i <= 4; i++) {
+            // 공백 찍기
+            for (let k = 1; k <= 4 - i; k++) {
+                document.write('&nbsp;');
+            }
+            // 별 찍기
+            for (let j = 1; j <= i; j++) {
+                document.write('*');
+            }
+            document.write('<br>');
+        }
+    </script></pre>
+    <hr>
+
+    <h2>3. 정삼각형 (피라미드)</h2>
+    <pre><script>
+        for (let i = 1; i <= 4; i++) {
+            // 공백 찍기
+            for (let k = 1; k <= 4 - i; k++) {
+                document.write('&nbsp;');
+            }
+            // 별 찍기 (홀수개)
+            for (let j = 1; j <= 2 * i - 1; j++) {
+                document.write('*');
+            }
+            document.write('<br>');
+        }
+    </script></pre>
+    <hr>
+
+    <h2>4. 다이아몬드</h2>
+    <pre><script>
+        // 윗부분 삼각형
+        for (let i = 1; i <= 4; i++) {
+            for (let k = 1; k <= 4 - i; k++) {
+                document.write('&nbsp;');
+            }
+            for (let j = 1; j <= 2 * i - 1; j++) {
+                document.write('*');
+            }
+            document.write('<br>');
+        }
+        // 아랫부분 역삼각형
+        for (let i = 3; i >= 1; i--) {
+            for (let k = 1; k <= 4 - i; k++) {
+                document.write('&nbsp;');
+            }
+            for (let j = 1; j <= 2 * i - 1; j++) {
+                document.write('*');
+            }
+            document.write('<br>');
+        }
+    </script></pre>
+
+</body>
+</html>
