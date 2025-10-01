@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>윤년 판별 프로그램 (HTML Form)</title>
+</head>
+<body>
+
+    <h3>년도를 입력하고 버튼을 누르세요.</h3>
+    
+    <input type="number" id="yearInput" placeholder="예: 2024">
+    
+    <button onclick="checkLeapYear()">판별하기</button>
+    
+    <h2 id="resultArea"></h2>
+
+    <script>
+        // 버튼 클릭 시 실행될 함수
+        function checkLeapYear() {
+            // 'yearInput' id를 가진 입력 칸의 값(value)을 가져옵니다.
+            const yearString = document.getElementById('yearInput').value;
+            
+            // 'resultArea' id를 가진 h2 태그를 찾습니다.
+            const resultElement = document.getElementById('resultArea');
+
+            // 입력값이 비어있는지 확인
+            if (!yearString) {
+                resultElement.textContent = "년도를 입력해주세요.";
+                return; // 함수 종료
+            }
+
+            // 입력받은 문자열을 숫자로 변환합니다.
+            const year = parseInt(yearString);
+
+            // 윤년 조건을 검사합니다.
+            if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+                // h2 태그 안에 결과를 표시합니다.
+                resultElement.textContent = `${year}년은 윤년(Leap Year)입니다. ✅`;
+            } 
+            else {
+                resultElement.textContent = `${year}년은 평년(Common Year)입니다.`;
+            }
+        }
+    </script>
+
+</body>
+</html>
