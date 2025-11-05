@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>무신사 클론 코딩 (이미지 추가)</title>
+    <style>
+        /* (기본, 헤더, 메인 CSS는 이전과 동일) */
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        ul { list-style: none; padding: 0; margin: 0; }
+        a { text-decoration: none; color: black; }
+
+        .header-nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 15px 30px; border-bottom: 1px solid #ddd;
+            width: 1200px; margin: 0 auto;
+        }
+        .logo { font-size: 28px; font-weight: bold; }
+        .search-bar input { width: 300px; padding: 8px; border: 1px solid #ccc; }
+        .menu ul { display: flex; gap: 25px; }
+        .menu a { font-weight: bold; font-size: 16px; }
+
+        main { width: 1200px; margin: 0 auto; }
+
+        /* 2. 메인 배너 (CSS 변경 없음) */
+        .main-banner {
+            width: 100%;
+            height: 450px;
+            margin-top: 20px;
+            overflow: hidden; 
+        }
+        .banner-container {
+            display: flex;
+            width: 300%; 
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+        .banner-slide {
+            width: calc(100% / 3); 
+            height: 100%;
+            /* [★ 변경] 글자 스타일 대신 배경색만 남김 */
+            background-color: #f0f0f0; /* 이미지가 로드 안될 경우 대비 */
+        }
+        
+        /* [★ 추가] 이미지 태그 스타일 */
+        .banner-slide img,
+        .product-image img {
+            width: 100%; /* 부모 태그(div)에 너비를 꽉 채움 */
+            height: 100%; /* 부모 태그(div)에 높이를 꽉 채움 */
+            object-fit: cover; /* ★ 중요: 비율을 유지하며 꽉 채움 (잘려도 OK) */
+        }
+
+        /* 3. 상품 목록 (CSS 변경) */
+        .product-section { margin-top: 40px; }
+        .product-section h2 { font-size: 22px; margin-bottom: 20px; }
+        .product-list {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        .product-item { border: 1px solid #eee; }
+        
+        /* [★ 변경] 회색 배경 대신 높이만 지정 */
+        .product-item .product-image {
+            width: 100%; 
+            height: 320px; /* 이미지 영역 (높이 고정) */
+        }
+        
+        .product-item .product-info { padding: 15px; }
+        .product-item .brand { font-weight: bold; font-size: 14px; }
+        .product-item .name { font-size: 14px; color: #555; margin: 5px 0; }
+        .product-item .price { font-weight: bold; color: #d00; font-size: 16px; }
+    </style>
+</head>
+<body>
+
+    <header class="header-nav">
+        </header>
+
+    <main>
+        <section class="main-banner">
+            <div class="banner-container">
+                <div class="banner-slide" style="background-color: #f0f0f0;">
+                    <img src="banner1.jpg" alt="배너 1">
+                </div>
+                <div class="banner-slide" style="background-color: #e0f0e0;">
+                    <img src="banner2.jpg" alt="배너 2">
+                </div>
+                <div class="banner-slide" style="background-color: #e0e0f0;">
+                    <img src="banner3.jpg" alt="배너 3">
+                </div>
+            </div>
+        </section>
+
+        <section class="product-section">
+            <h2>실시간 랭킹</h2>
+            <div class="product-list">
+                <div class="product-item">
+                    <div class="product-image">
+                        <img src="item1.jpg" alt="상품 1">
+                    </div>
+                    <div class="product-info">
+                        <div class="brand">브랜드 A</div>
+                        <div class="name">상품 이름입니다.</div>
+                        <div class="price">100,000원</div>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <div class="product-image">
+                        <img src="item2.jpg" alt="상품 2">
+                    </div>
+                    <div class="product-info">
+                        <div class="brand">브랜드 B</div>
+                        <div class="name">두 번째 상품</div>
+                        <div class="price">85,000원</div>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <div class="product-image">
+                        <img src="item3.jpg" alt="상품 3">
+                    </div>
+                    <div class="product-info">
+                        <div class="brand">브랜드 C</div>
+                        <div class="name">인기 많은 상품</div>
+                        <div class="price">120,000원</div>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <div class="product-image">
+                        <img src="item4.jpg" alt="상품 4">
+                    </div>
+                    <div class="product-info">
+                        <div class="brand">브랜드 D</div>
+                        <div class="name">신규 상품</div>
+                        <div class="price">99,000원</div>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <div class="product-image">
+                        <img src="item5.jpg" alt="상품 5">
+                    </div>
+                    <div class="product-info">
+                        <div class="brand">브랜드 E</div>
+                        <div class="name">상품 이름 5</div>
+                        <div class="price">76,000원</div>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <div class="product-image">
+                        <img src="item6.jpg" alt="상품 6">
+                    </div>
+                    <div class="product-info">
+                        <div class="brand">브랜드 F</div>
+                        <div class="name">상품 이름 6</div>
+                        <div class="price">110,000원</div>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <div class="product-image">
+                        <img src="item7.jpg" alt="상품 7">
+                    </div>
+                    <div class="product-info">
+                        <div class="brand">브랜드 G</div>
+                        <div class="name">상품 이름 7</div>
+                        <div class="price">50,000원</div>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <div class="product-image">
+                        <img src="item8.jpg" alt="상품 8">
+                    </div>
+                    <div class="product-info">
+                        <div class="brand">브랜드 H</div>
+                        <div class="name">상품 이름 8</div>
+                        <div class="price">240,000원</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let currentSlide = 0; 
+            const slideContainer = document.querySelector('.banner-container');
+            const totalSlides = 3; 
+
+            setInterval(() => {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                slideContainer.style.transform = `translateX(-${currentSlide * (100 / totalSlides)}%)`;
+            }, 3000); 
+        });
+    </script>
+
+</body>
+</html>
