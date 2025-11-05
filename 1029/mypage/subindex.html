@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>무신사 클론 코딩</title>
+    <style>
+        /* (기본 스타일은 이전과 동일) */
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        ul { list-style: none; padding: 0; margin: 0; }
+        a { text-decoration: none; color: black; }
+
+        .header-nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 15px 30px; border-bottom: 1px solid #ddd;
+            width: 1200px; margin: 0 auto;
+        }
+        .logo { font-size: 28px; font-weight: bold; }
+        .search-bar input { width: 300px; padding: 8px; border: 1px solid #ccc; }
+        .menu ul { display: flex; gap: 25px; }
+        .menu a { font-weight: bold; font-size: 16px; }
+
+        main { width: 1200px; margin: 0 auto; }
+
+        /* 2. 메인 배너 [★ CSS 변경] */
+        .main-banner {
+            width: 100%; /* (1200px) */
+            height: 450px;
+            margin-top: 20px;
+            overflow: hidden; /* ★ 중요: 이 영역을 벗어나는 배너는 숨김 */
+        }
+        .banner-container {
+            display: flex;
+            width: 300%; /* ★ 배너가 3개라서 300% */
+            height: 100%;
+            /* ★ 중요: 움직임을 부드럽게 (0.5초) */
+            transition: transform 0.5s ease-in-out;
+        }
+        .banner-slide {
+            width: calc(100% / 3); /* ★ 3개 중 1개의 너비 */
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+        }
+
+        /* (상품 목록 CSS는 이전과 동일) */
+        .product-section { margin-top: 40px; }
+        .product-section h2 { font-size: 22px; margin-bottom: 20px; }
+        .product-list {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        .product-item { border: 1px solid #eee; }
+        .product-item .product-image {
+            width: 100%; height: 320px; background-color: #f8f8f8;
+        }
+        .product-item .product-info { padding: 15px; }
+        .product-item .brand { font-weight: bold; font-size: 14px; }
+        .product-item .name { font-size: 14px; color: #555; margin: 5px 0; }
+        .product-item .price { font-weight: bold; color: #d00; font-size: 16px; }
+    </style>
+</head>
+<body>
+
+    <header class="header-nav">
+        <div class="logo">MUSINSA</div>
+        <div class="search-bar"><input type="text" placeholder="상품 검색"></div>
+        <nav class="menu">
+            <ul>
+                <li><a href="#">Rank</a></li>
+                <li><a href="#">New</a></li>
+                <li><a href="#">Sale</a></li>
+                <li><a href="#">Outer</a></li>
+                <li><a href="#">Top</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="main-banner">
+            <div class="banner-container">
+                <div class="banner-slide" style="background-color: #f0f0f0;">
+                    <p>배너 1 (광고)</p>
+                </div>
+                <div class="banner-slide" style="background-color: #e0f0e0;">
+                    <p>배너 2 (세일 정보)</p>
+                </div>
+                <div class="banner-slide" style="background-color: #e0e0f0;">
+                    <p>배너 3 (신상품)</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="product-section">
+            <h2>실시간 랭킹</h2>
+            <div class="product-list">
+                <div class="product-item">
+                    <div class="product-image"></div>
+                    <div class="product-info">
+                        <div class="brand">브랜드 A</div>
+                        <div class="name">상품 이름입니다.</div>
+                        <div class="price">100,000원</div>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <div class="product-image"></div>
+                    <div class="product-info">
+                        <div class="brand">브랜드 B</div>
+                        <div class="name">두 번째 상품</div>
+                        <div class="price">85,000원</div>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <div class="product-image"></div>
+                    <div class="product-info">
+                        <div class="brand">브랜드 C</div>
+                        <div class="name">인기 많은 상품</div>
+                        <div class="price">120,000원</div>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <div class="product-image"></div>
+                    <div class="product-info">
+                        <div class="brand">브랜드 D</div>
+                        <div class="name">신규 상품</div>
+                        <div class="price">99,000원</div>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <div class="product-image"></div>
+                    <div class="product-info">
+                        <div class="brand">브랜드 E</div>
+                        <div class="name">상품 이름 5</div>
+                        <div class="price">76,000원</div>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <div class="product-image"></div>
+                    <div class="product-info">
+                        <div class="brand">브랜드 F</div>
+                        <div class="name">상품 이름 6</div>
+                        <div class="price">110,000원</div>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <div class="product-image"></div>
+                    <div class="product-info">
+                        <div class="brand">브랜드 G</div>
+                        <div class="name">상품 이름 7</div>
+                        <div class="price">50,000원</div>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <div class="product-image"></div>
+                    <div class="product-info">
+                        <div class="brand">브랜드 H</div>
+                        <div class="name">상품 이름 8</div>
+                        <div class="price">240,000원</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // DOM(HTML)이 모두 로드된 후 스크립트 실행
+        document.addEventListener("DOMContentLoaded", function() {
+            
+            let currentSlide = 0; // 현재 보이는 배너 (0 = 첫 번째)
+            const slideContainer = document.querySelector('.banner-container');
+            const totalSlides = 3; // 총 배너 개수
+
+            // 3초(3000ms)마다 함수 실행
+            setInterval(() => {
+                
+                // 1. 다음 슬라이드 번호 계산
+                // 0 -> 1, 1 -> 2, 2 -> 0 (다시 처음으로)
+                currentSlide = (currentSlide + 1) % totalSlides;
+
+                // 2. CSS transform 속성을 변경하여 배너 이동
+                // (0 * -33.33) = 0%
+                // (1 * -33.33) = -33.33%
+                // (2 * -33.33) = -66.66%
+                slideContainer.style.transform = `translateX(-${currentSlide * (100 / totalSlides)}%)`;
+
+            }, 3000); // 3초
+        });
+    </script>
+
+</body>
+</html>
