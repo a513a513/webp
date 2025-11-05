@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>무신사 클론 코딩</title>
+    <style>
+        /* 기본 스타일 초기화 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        /* 1. 상단 내비게이션 바 */
+        .header-nav {
+            display: flex; /* 항목들을 가로로 정렬 */
+            justify-content: space-between; /* 양쪽 끝으로 분배 */
+            align-items: center; /* 세로 중앙 정렬 */
+            padding: 15px 30px;
+            border-bottom: 1px solid #ddd;
+            width: 1200px; /* 전체 너비 고정 (예시) */
+            margin: 0 auto; /* 가운데 정렬 */
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .search-bar input {
+            width: 300px;
+            padding: 8px;
+            border: 1px solid #ccc;
+        }
+        .menu ul {
+            display: flex;
+            gap: 25px; /* 메뉴 사이 간격 */
+        }
+        .menu a {
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        /* 페이지 메인 콘텐츠 영역 */
+        main {
+            width: 1200px;
+            margin: 0 auto; /* 가운데 정렬 */
+        }
+
+        /* 2. 메인 배너 */
+        .main-banner {
+            background-color: #f0f0f0; /* 배너 배경색 (임시) */
+            height: 450px;
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            color: #888;
+        }
+
+        /* 3. 상품 목록 */
+        .product-section {
+            margin-top: 40px;
+        }
+        .product-section h2 {
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+        .product-list {
+            display: grid;
+            /* 4개의 열(column)을 만들고, 각 열은 1fr (동일한 비율)로 설정 */
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px; /* 아이템 사이의 간격 */
+        }
+        .product-item {
+            border: 1px solid #eee;
+        }
+        .product-item .product-image {
+            width: 100%;
+            height: 320px; /* 이미지 영역 (임시) */
+            background-color: #f8f8f8;
+        }
+        .product-item .product-info {
+            padding: 15px;
+        }
+        .product-item .brand {
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .product-item .name {
+            font-size: 14px;
+            color: #555;
+            margin: 5px 0;
+        }
+        .product-item .price {
+            font-weight: bold;
+            color: #d00;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header-nav">
+        <div class="logo">MUSINSA</div>
+        <div class="search-bar">
+            <input type="text" placeholder="상품 검색">
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a href="#">Rank</a></li>
+                <li><a href="#">New</a></li>
+                <li><a href="#">Sale</a></li>
+                <li><a href="#">Outer</a></li>
+                <li><a href="#">Top</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="main-banner">
+            <p>메인 배너 (광고 영역)</p>
+            </section>
+
+        <section class="product-section">
+            <h2>실시간 랭킹</h2>
+            <div class="product-list">
+                <div class="product-item">
+                    <div class="product-image"></div>
+                    <div class="product-info">
+                        <div class="brand">브랜드 A</div>
+                        <div class="name">상품 이름입니다.</div>
+                        <div class="price">100,000원</div>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <div class="product-image"></div>
+                    <div class="product-info">
+                        <div class="brand">브랜드 B</div>
+                        <div class="name">두 번째 상품</div>
+                        <div class="price">85,000원</div>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <div class="product-image"></div>
+                    <div class="product-info">
+                        <div class="brand">브랜드 C</div>
+                        <div class="name">인기 많은 상품</div>
+                        <div class="price">120,000원</div>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <div class="product-image"></div>
+                    <div class="product-info">
+                        <div class="brand">브랜드 D</div>
+                        <div class="name">신규 상품</div>
+                        <div class="price">99,000원</div>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <div class="product-image"></div>
+                    <div class="product-info">
+                        <div class="brand">브랜드 E</div>
+                        <div class="name">상품 이름 5</div>
+                        <div class="price">76,000원</div>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <div class="product-image"></div>
+                    <div class="product-info">
+                        <div class="brand">브랜드 F</div>
+                        <div class="name">상품 이름 6</div>
+                        <div class="price">110,000원</div>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <div class="product-image"></div>
+                    <div class="product-info">
+                        <div class="brand">브랜드 G</div>
+                        <div class="name">상품 이름 7</div>
+                        <div class="price">50,000원</div>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <div class="product-image"></div>
+                    <div class="product-info">
+                        <div class="brand">브랜드 H</div>
+                        <div class="name">상품 이름 8</div>
+                        <div class="price">240,000원</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
